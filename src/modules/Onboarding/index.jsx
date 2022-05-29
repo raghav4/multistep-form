@@ -60,6 +60,14 @@ const initialState = {
   currentActiveRadio: null,
 };
 
+/**
+ * The state management is done using useReducer hook in the parent component.
+ * The state is being lifted up to make it persistent,
+ * whenever a new form is being rendered by clicking on the next step.
+ *
+ * There are other ways to solve this problem by using context or having a global state using redux.
+ * */
+
 function Onboarding() {
   const [state, dispatch] = useReducer(
     (current, updated) => ({ ...current, ...updated }),
